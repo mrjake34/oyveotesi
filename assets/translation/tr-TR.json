@@ -1,0 +1,11 @@
+{
+    "mainText": {
+        "title": "Oy ve Ötesi",
+        "login": "Giriş Yap",
+        "notFountPage": "Sayfa Bulunamadı",
+        "eMail": "E-posta",
+        "password": "Şifre",
+        "forgotPassword": "Şifremi Unuttum",
+        "signUp": "Kayıt Ol"
+    }
+}
