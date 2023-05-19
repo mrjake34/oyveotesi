@@ -33,6 +33,7 @@ flutter:
     - assets/images/efes_logo512.png
     - assets/images/logo.svg
     - assets/translation/
+    - assets/test_json.json
 
     
 

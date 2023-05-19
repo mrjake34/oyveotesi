@@ -1,6 +1,17 @@
-part of 'confirmed_cubit.dart';
+import 'package:flutter/material.dart';
+
+import '../model/test_model.dart';
 
 @immutable
-abstract class ConfirmedState {}
+class ConfirmedState {
+  const ConfirmedState({this.isLoading = false, this.boxListTest});
+  final bool isLoading;
+  final BoxListTest? boxListTest;
 
-class ConfirmedInitial extends ConfirmedState {}
+  ConfirmedState copyWith({
+    final bool? isLoading,
+    final BoxListTest? boxListTest,
+  }) {
+    return ConfirmedState(isLoading: isLoading ?? this.isLoading, boxListTest: boxListTest ?? this.boxListTest);
+  }
+}
