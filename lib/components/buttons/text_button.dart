@@ -2,12 +2,13 @@
 import 'package:flutter/material.dart';
 
 class MainTextButton extends StatelessWidget {
-  final Widget buttonWidget;
   final Function() buttonFunction;
+  final Widget buttonWidget;
+
   const MainTextButton({
     Key? key,
-    required this.buttonWidget,
     required this.buttonFunction,
+    required this.buttonWidget,
   }) : super(key: key);
 
   @override

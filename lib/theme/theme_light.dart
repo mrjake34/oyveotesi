@@ -13,7 +13,7 @@ ThemeData lightTheme = ThemeData(
     onSecondary: Color.fromARGB(255, 87, 92, 107),
     error: Colors.red,
     onError: Colors.redAccent,
-    background: Color.fromARGB(255, 236, 236, 236),
+    background: Color(0xFFFFFFFF),
     //Scaffold Background
     onBackground: Colors.white,
     //Scaffold Color and Cards
@@ -30,7 +30,7 @@ ThemeData lightTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
           textStyle: const TextStyle(fontWeight: FontWeight.bold),
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: const Color.fromARGB(255, 82, 196, 26),
           foregroundColor: Colors.white,
           side: BorderSide.none,
           shape: RoundedRectangleBorder(
