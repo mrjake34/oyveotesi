@@ -3,6 +3,7 @@
 abstract class  LocaleKeys {
   static const mainText_title = 'mainText.title';
   static const mainText_login = 'mainText.login';
+  static const mainText_logout = 'mainText.logout';
   static const mainText_notFountPage = 'mainText.notFountPage';
   static const mainText_eMail = 'mainText.eMail';
   static const mainText_password = 'mainText.password';
@@ -16,11 +17,11 @@ abstract class  LocaleKeys {
   static const mainText_addReport = 'mainText.addReport';
   static const mainText_choseFromGallery = 'mainText.choseFromGallery';
   static const mainText_reports = 'mainText.reports';
-  static const mainText_confimation = 'mainText.confimation';
+  static const mainText_verify = 'mainText.verify';
   static const mainText_resource = 'mainText.resource';
   static const mainText_profile = 'mainText.profile';
-  static const mainText_confirmationNoConfirmationTitle = 'mainText.confirmationNoConfirmationTitle';
-  static const mainText_confirmationNoConfirmationContext = 'mainText.confirmationNoConfirmationContext';
+  static const mainText_verifyNoConfirmationTitle = 'mainText.verifyNoConfirmationTitle';
+  static const mainText_verifyNoConfirmationContext = 'mainText.verifyNoConfirmationContext';
   static const mainText_howUseVideo = 'mainText.howUseVideo';
   static const mainText_electionDayDocuments = 'mainText.electionDayDocuments';
   static const mainText_135noDocument = 'mainText.135noDocument';
@@ -28,10 +29,34 @@ abstract class  LocaleKeys {
   static const mainText_schoolLeader = 'mainText.schoolLeader';
   static const mainText_changePassword = 'mainText.changePassword';
   static const mainText_logOut = 'mainText.logOut';
+  static const mainText_loadingReportTitle = 'mainText.loadingReportTitle';
+  static const mainText_pleaseWaitContext = 'mainText.pleaseWaitContext';
+  static const mainText_genelge = 'mainText.genelge';
+  static const mainText_genelgePageContext = 'mainText.genelgePageContext';
+  static const mainText_searchGenelge = 'mainText.searchGenelge';
+  static const mainText_reportBugTitle = 'mainText.reportBugTitle';
+  static const mainText_voteToAppTitle = 'mainText.voteToAppTitle';
+  static const mainText_voteToAppSubtitle = 'mainText.voteToAppSubtitle';
+  static const mainText_reportBugButtonTitle = 'mainText.reportBugButtonTitle';
+  static const mainText_reportBugButtonContext = 'mainText.reportBugButtonContext';
+  static const mainText_feedBackButtonTitle = 'mainText.feedBackButtonTitle';
+  static const mainText_feedBackButtonContext = 'mainText.feedBackButtonContext';
+  static const mainText_reportBugSenderTitle = 'mainText.reportBugSenderTitle';
+  static const mainText_addComment = 'mainText.addComment';
+  static const mainText_addCommentDesc = 'mainText.addCommentDesc';
+  static const mainText_send = 'mainText.send';
+  static const mainText_requestFeatureTitle = 'mainText.requestFeatureTitle';
+  static const mainText_whichFeatureTitle = 'mainText.whichFeatureTitle';
+  static const mainText_yourRequest = 'mainText.yourRequest';
+  static const mainText_requestDetailTitle = 'mainText.requestDetailTitle';
+  static const mainText_whyYouWantThisFeature = 'mainText.whyYouWantThisFeature';
   static const mainText = 'mainText';
   static const errorText_requiredEmailLogin = 'errorText.requiredEmailLogin';
   static const errorText_requiredPasswordLogin = 'errorText.requiredPasswordLogin';
   static const errorText_enterValidEmail = 'errorText.enterValidEmail';
+  static const errorText_errorWhileOpenYoutubeLink = 'errorText.errorWhileOpenYoutubeLink';
+  static const errorText_errorWhileOpenEducationalLink = 'errorText.errorWhileOpenEducationalLink';
+  static const errorText_errorWhileCalling = 'errorText.errorWhileCalling';
   static const errorText = 'errorText';
 
 }

@@ -1,10 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:oyveotesi/screens/confirmed_page/view/confirmed.dart';
+import 'package:oyveotesi/components/bottomsheet/report_bug_bottom_sheet.dart';
+import 'package:oyveotesi/constants/urls/urls.dart';
+import 'package:oyveotesi/screens/profile/view/profile_page.dart';
+import 'package:oyveotesi/screens/reports_page/view/reports_page.dart';
+import 'package:oyveotesi/screens/verify_page/view/verify_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../base/service/translation/locale_keys.g.dart';
+import '../../../base/service/utils/utils.dart';
 import '../../../constants/colors/constant_colors.dart';
+import '../../reports_page/service/reports_service.dart';
+import '../../resource_page/view/resource_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,16 +26,10 @@ class _HomePageState extends State<HomePage> {
       PersistentTabController(initialIndex: 0);
   List<Widget> _buildScreens() {
     return [
-      ConfirmedPage(),
-      Container(
-        color: Colors.amber,
-      ),
-      Container(
-        color: Colors.blue,
-      ),
-      Container(
-        color: Colors.red,
-      ),
+      const ReportsPage(),
+      const VerifyPage(),
+      const ResourcePage(),
+      const ProfilePage()
     ];
   }
 
@@ -42,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           activeColorPrimary: mainColor,
           inactiveColorPrimary: mainColor,
           icon: const Icon(Icons.fact_check_outlined),
-          title: LocaleKeys.mainText_confimation.tr()),
+          title: LocaleKeys.mainText_verify.tr()),
       PersistentBottomNavBarItem(
           activeColorPrimary: mainColor,
           inactiveColorPrimary: mainColor,
@@ -59,6 +61,14 @@ class _HomePageState extends State<HomePage> {
     ];
   }
 
+  Future<void> callCallCenter() async {
+    if (!await launchUrl(Uri.parse(callCenterNumber),
+        mode: LaunchMode.externalNonBrowserApplication)) {
+      UtilsService.instance
+          .errorSnackBar(LocaleKeys.errorText_errorWhileCalling.tr());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +76,9 @@ class _HomePageState extends State<HomePage> {
         title: Text(LocaleKeys.mainText_title.tr()),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                OpenBottomSheet().openBottomSheet(context);
+              },
               icon: Container(
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -81,7 +93,9 @@ class _HomePageState extends State<HomePage> {
               style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)))),
-              onPressed: () {},
+              onPressed: () {
+                callCallCenter();
+              },
               icon: const Icon(Icons.phone),
               label: Text(LocaleKeys.mainText_callCenter.tr())),
           const SizedBox(

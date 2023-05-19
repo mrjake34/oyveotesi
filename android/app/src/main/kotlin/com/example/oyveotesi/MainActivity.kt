@@ -1,4 +1,4 @@
-package com.example.oyveotesi
+package com.oyveotesi.secim
 
 import io.flutter.embedding.android.FlutterActivity
 
