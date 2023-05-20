@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../../../base/models/base_model_view.dart';
+import '../../../constants/network/constants_network.dart';
 
 part 'login_state.dart';
 
@@ -20,36 +22,19 @@ class LoginCubit extends Cubit<LoginState> with BaseModelView {
     this.emailController,
     this.passwordController,
     this.context,
-  ) : super(LoginInitial());
+  ) : super(LoginState());
 
-  // Future<void> postLoginModel() async {
-  //   if (loginKey.currentState?.validate() ?? false) {
-  //     changeLoginState();
-  //     final data = await service
-  //         .postLoginModel(LoginModel(
-  //             email: emailController.text.trim(),
-  //             password: passwordController.text.trim()))
-  //         .onError((DioError error, stackTrace) {
-  //       changeLoginState();
-  //       if (error.response?.statusCode == 400) {
-  //         utils.errorSnackBar(LocaleKeys.errors_userNotFound.tr());
-  //       } else {
-  //         utils.errorSnackBar(LocaleKeys.errors_loginError.tr());
-  //       }
-  //       changeLoginState();
-  //       return null;
-  //     });
-  //     changeLoginState();
-  //     if (data is LoginResponseModel) {
-  //       emit(LoginComplete(data));
-  //     }
-  //   } else {
-  //     UtilsService.instance
-  //         .errorSnackBar(LocaleKeys.errors_pleaseEnterAllField.tr());
-  //     isLoginFail = true;
-  //     emit(LoginValidate(isLoginFail));
-  //   }
-  // }
+  Dio dio = Dio();
+
+  Future<void> getList() async {
+    final response = await dio.get(ballotBoxListPath,
+        options: Options(headers: {"Authorization": token}));
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+    } else if (response.statusCode == 400) {
+    } else if (response.statusCode == 404) {
+    } else {}
+  }
 
   // void changeLoginState() {
   //   isLoading = !isLoading;

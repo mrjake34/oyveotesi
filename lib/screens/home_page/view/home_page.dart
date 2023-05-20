@@ -11,7 +11,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../base/service/translation/locale_keys.g.dart';
 import '../../../base/service/utils/utils.dart';
 import '../../../constants/colors/constant_colors.dart';
-import '../../reports_page/service/reports_service.dart';
 import '../../resource_page/view/resource_page.dart';
 
 class HomePage extends StatefulWidget {

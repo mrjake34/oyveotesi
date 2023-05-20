@@ -127,7 +127,7 @@ class BuildScaffold extends StatelessWidget {
                     child: TextFormField(
                       onChanged: (value) {
                         context.read<SearchBarProviderGenelge>().setSearchTerm =
-                            value;
+                            value.toLowerCase();
                       },
                       decoration: InputDecoration(
                           hintText: LocaleKeys.mainText_searchGenelge.tr(),
