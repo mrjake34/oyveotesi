@@ -1,9 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oyveotesi/components/bottomsheet/report_bug_bottom_sheet.dart';
-import 'package:oyveotesi/components/buttons/main_elevated_button.dart';
 import 'package:oyveotesi/constants/colors/constant_colors.dart';
 import 'package:oyveotesi/constants/sizes/sizes.dart';
 import 'package:oyveotesi/screens/genelge_page/cubit/genelge_cubit.dart';

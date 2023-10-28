@@ -9,8 +9,10 @@ class ReportsCubit extends Cubit<ReportsState> {
   ReportsCubit() : super(const ReportsState(isLoading: true));
   Dio dio = Dio();
   Future<void> getList() async {
-    final response = await dio.get(ballotBoxListPath,
-        options: Options(headers: {"Authorization": token}));
+    final response = await dio.get(
+      ballotBoxListPath,
+      // options: Options(headers: {"Authorization": token}),
+    );
     print(response.statusCode);
     if (response.statusCode == 200) {
       BallotBoxList ballotBoxList = BallotBoxList.fromJson(response.data);
